@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul,li,a{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        input{
+            display: none;
+        }
+        .wrapper{
+            margin: 0 auto;
+            width: 600px;
+            background-color: #eee;
+            font-size: 0;
+        }
+        .nav ul li{
+            display: inline-block;
+            height: 50px;
+            width: 200px;
+            background-color: rgb(148, 137, 137);
+            font-size: 15px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .nav ul li label{
+            display: block;
+            cursor: pointer;
+        }
+        .main ul{
+            padding: 20px 0;
+            display: none;
+        }
+        .main ul li{
+            margin: 15px 80px;
+        }
+        .main ul li a{
+            display: block;
+            font-size: 15px;
+            color: #5c5c5c;
+
+        }
+        #hot:checked~ .main .hot-new,#home:checked~ .main .home-new,#nation:checked~ .main .nation-new{
+            display: block;
+        }
+        #hot:checked~ .nav .hot,#home:checked~ .nav .home,#nation:checked~ .nav .nation{
+            background-color: #eee;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="radio" name="choose" id="hot" checked>
+        <input type="radio" name="choose" id="home">
+        <input type="radio" name="choose" id="nation">
+        <div class="nav">
+            <ul>
+                <li class="hot">
+                    <label for="hot">CSS3基础</label> 
+                </li>
+                <li class="home">
+                    <label for="home"> CSS3进阶</label>
+                </li>
+                <li class="nation">
+                    <label for="nation">CSS3总结+答疑</label>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            
+            <ul class="hot-new">
+                <li><a href="javascript:;">CSS前情回顾</a></li>
+                <li><a href="javascript:;">CSS3常用属性（一）</a></li>
+                <li><a href="javascript:;">CSS3常用属性（二）</a></li>
+                <li><a href="javascript:;">CSS3常用选择器</a></li>
+            </ul>
+            
+            <ul class="home-new">
+                <li><a href="javascript:;">Media媒体查询</a></li>
+                <li><a href="javascript:;">移动端布局</a></li>
+                <li><a href="javascript:;">项目：响应式布局网站</a></li>
+                <li><a href="javascript:;">Bootstrap快速使用</a></li>
+            </ul>
+            
+            <ul class="nation-new">
+                <li><a href="javascript:;">CSS3总结+答疑</a></li>
+                <li><a href="javascript:;">项目：3D炫酷动画</a></li>
+                <li><a href="javascript:;">项目：动画练习</a></li>
+                <li><a href="javascript:;">动画: transform形状变换</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body,ul,li,a{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: url(../imags/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+.container{
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+.dic{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+img{
+    display: none;
+}
+.dic canvas{
+    height: 250px;
+    width: 250px;
+    /* border: 50px solid black; */
+    border-radius: 50%;
+}
+.container2{
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(245, 239, 239, 0.315);
+    border-radius: 20px;
+}
+.container2 i{
+    font-size: 35px;
+}
+.btn{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 90px;
+}
+.prve{
+    left: 40px;
+}
+.next{
+    left: 140px;
+}
+.container2>div{
+    top: 50%;
+    margin-top: -17px;
+}
+.volume{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 150px;
+}
+.container2 .progress{
+    margin-top: -15px;
+}
+.progress{
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    top: 50%;
+
+    left: 50%;
+    margin-left: -200px;
+    /* background-color: red; */
+    font-size: 22px;
+
+}
+.current-time{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.all-time{
+    float: right;   
+    height: 30px;
+    line-height: 30px; 
+}
+.pro{
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    width: 230px;
+    height: 2px;
+    left: 50%;
+    margin-left: -110px;
+}
+.box, .box2{
+    height: 10px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+.pro-bg{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(12, 12, 12, 0.781);
+}
+.pro-on{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 0px;
+    height: 2px;
+    background-color: #fff;
+}
+.prora{
+    position: absolute;
+    right: -14px;
+    top: -9px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* background-color: red; */
+
+}
+.pro-ra{
+    position: absolute;
+    right:6px;
+    top: 6px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.container .pro2{
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    width: 100px;
+    height: 2px;
+    right: 30px;
+    background:rgba(12, 12, 12, 0.781);
+}
+.pro-on2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 2px;
+    background-color: rgb(197, 189, 189);
+}
+.prora2{
+    position: absolute;
+    right: -9px;
+    top: -9px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.pro-ra2{
+    position: absolute;
+    right:6px;
+    top: 6px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(170, 160, 160);
+    cursor: pointer;
+}
+

@@ -1,0 +1,108 @@
+body,ul,li,a{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+.header{
+    height: 41px;
+    margin:0 auto;
+    background: rgb(99, 97, 97);
+}
+.nav{
+    position: relative;
+    height: 32px;
+    width: 1226px;
+    margin: 0 auto;
+    font-size: 0px;
+}
+.nav::before,.nav::after,.fixclear::before,.fixclear::after{
+    content: "";
+    display: table;
+}
+.nav::after,.fixclear::after{
+    clear: both;
+}
+.nav1{
+    float: left;
+    height: 32px;
+    font-size: 13px;
+}
+.nav1 li{
+    /* display: block; */
+    float: left;
+    line-height: 32px;
+    padding: 0 10px;
+    color: rgb(189, 184, 184);
+}
+.nav1 .nav11{
+    /* display: block; */
+    padding: 0 10px 0 20px;
+}
+.nav1 a{
+    display: block;
+    color: rgb(224, 217, 217);
+}
+.nav1 a:hover{
+    color: red;
+    background: yellow;
+}
+.nav2{
+    float: right;
+    height: 32px;
+    font-size: 13px;
+}
+.nav2 li{
+    float: right;
+    line-height: 32px;
+    padding: 0 10px;
+}
+.nav2 a{
+    display: block;
+    color: rgb(185, 178, 178);
+}
+.nav2 a:hover{
+    color: red;
+    background: yellow;
+}
+
+.main{
+    margin: 0 auto;
+    width: 982px;
+}
+
+.section1{
+    position: absolute;
+    float: left;
+    background: rgba(105, 99, 99, 0.479);
+}
+.section1 li{
+    display: block;
+    width: 200px;
+    height: 31.2px;
+    line-height: 31.2px;
+}
+.section1 li:hover{
+    background: white;
+}
+.section2{
+    float: left;
+    width: 982px;
+    height: 500px;
+}
+.section2 img{
+    width: 982px;
+    height: 500px;
+}
+.final{
+    position: absolute;
+    bottom: 0;
+    min-width: 1226px;
+    background: rgb(134, 128, 128);
+    border: 1px solid black;
+}
+.final p{
+    color: rgb(68, 60, 60);
+}
+
+

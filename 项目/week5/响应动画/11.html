@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            width: 1226px;
+            margin: 0 auto;
+            font-size: 0;
+        }
+        .wrapper li{
+            position: relative;
+            margin: 0 10px;
+            list-style: none;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: #333;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
+            border-radius:18px;
+            transition: transform 0.8s;
+            transform: translateY(100%);
+            transition: transform 1.5s;
+        }
+        div{
+            position: absolute;
+            bottom: -60px;
+            left: 0px;
+            height: 51px;
+            font-size: 16px;
+            padding: 10px 10px 5px;
+            color: purple;
+            background: linear-gradient(to top,#333 ,transparent);
+            border-radius:  0 0 16px 16px;
+            opacity: 1;
+        }
+        .ss1 div{
+            animation: moveb 0.5s linear forwards;
+        }
+        .ss2 div{
+            animation: movel 0.5s linear forwards;
+        }
+        .ss3 div{
+            animation: mover 0.5s linear forwards;
+        }
+        .ss4 div{
+            animation: movet 0.5s linear forwards;
+        }
+
+        .sss1 div{
+            animation: movebb 0.5s linear;
+        }
+        .sss2 div{
+            animation: movell 0.5s linear;
+        }
+        .sss3 div{
+            animation: moverr 0.5s linear;
+        }
+        .sss4 div{
+            animation: movett 0.5s linear;
+        }
+
+        .inite .item img{
+            transform: translateY(0);
+        }
+        li:nth-child(2) img{
+            transition: transform 1.5s 0.1s;
+        }
+        li:nth-child(3) img{
+            transition: transform 1.5s 0.2s;
+        }
+        li:nth-child(4) img{
+            transition: transform 1.5s 0.3s;
+        }
+        li:nth-child(5) img{
+            transition: transform 1.5s 0.4s;
+        }
+    
+        @keyframes mover{
+            0%{
+                left: 200px;
+                bottom: 0px;
+            }
+            100%{
+                left: 0px;
+                bottom: 0px;
+            }
+        }
+        @keyframes movel{
+            0%{
+                left: -200px;
+                bottom: 0px;
+            }
+            100%{
+                left: 0px;
+                bottom: 0px;
+            }
+        }
+        @keyframes moveb{
+            0%{
+                left: 0px;
+                bottom: -51px
+            }
+            100%{
+                left: 0px;
+                bottom: 0px;
+            }
+        }
+        @keyframes movet{
+            0%{
+                left: 0px;
+                bottom: 51px;
+                opacity: 0;
+            }
+            100%{
+                left: 0px;
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+        @keyframes moverr{
+            0%{
+                left: 0;
+                bottom: 0;
+            }
+            100%{
+                left: 200px;
+                bottom: 0;
+            }
+        }
+        @keyframes movell{
+            0%{
+                left: 0;
+                bottom: 0;
+            }
+            100%{
+                left: -200px;
+                bottom: 0;
+            }
+        }
+        @keyframes movebb{
+            0%{
+                left: 0;
+                bottom: 0;
+            }
+            100%{
+                left: 0;
+                bottom: -51px;
+            }
+        }
+        @keyframes movett{
+            0%{
+                left: 0;
+                bottom: 0;
+                opacity: 1;
+            }
+            100%{
+                left: 0;
+                bottom: 51px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="wrapper">
+        <li class="item">
+            <img src="./imags/1.jpeg" alt="">
+            <div>内容内容内容内容内容内容内容内容内容</div>
+        </li>
+        <li class="item">
+            <img src="./imags/2.jpeg" alt="">
+            <div>内容内容内容内容内容内容内容内容内容</div>
+        </li>
+        <li class="item">
+            <img src="./imags/3.jpg" alt="">
+            <div>内容内容内容内容内容内容内容内容内容</div>
+        </li>
+        <li class="item">
+            <img src="./imags/6.jpeg" alt="">
+            <div>内容内容内容内容内容内容内容内容内容</div>
+        </li>
+        <li class="item">
+            <img src="./imags/5.jpg" alt="">
+            <div>内容内容内容内容内容内容内容内容内容</div>
+        </li>
+    </ul>
+    <script>
+        var oUl=document.getElementsByTagName('ul')[0];
+        var oLi=oUl.getElementsByTagName('li');
+        var oPace=document.getElementsByClassName('item')[0];
+        var oImg=document.getElementsByTagName('img');
+        var flag=false;
+        var w,h,ss,zz,xx;
+        window.onload = function(){
+            oUl.className="wrapper inite";
+        }
+        for(var i=0 ;i<5;i++){
+            (function(j){
+                oLi[j].onmouseenter=function(e){
+                    w=this.offsetWidth;
+                    h=this.offsetHeight;
+                    var x=e.clientX-this.getBoundingClientRect().left,
+                        y=e.clientY-this.getBoundingClientRect().top;
+                    var k=h/w;
+
+                    if(y > k*x){
+                        if(y > -k*x+h){
+                            oLi[j].className="item ss1";
+                        }else{
+                            oLi[j].className="item ss2";
+                        }
+                    }else{
+                        if(y > -k*x+h){
+                            oLi[j].className="item ss3";
+                        }else{
+                            oLi[j].className="item ss4";
+                        }
+                    }
+                }
+            })(i);
+            (function(j){
+                oLi[j].onmouseleave=function(e){
+                    w=this.offsetWidth;
+                    h=this.offsetHeight;
+                    var x=e.clientX-this.getBoundingClientRect().left,
+                        y=e.clientY-this.getBoundingClientRect().top;
+                    var k=h/w;
+                    if(y > k*x){
+                        if(y > -k*x+h){
+                            oLi[j].className="item sss1";
+                        }else{
+                            oLi[j].className="item sss2";
+                        }
+                    }else{
+                        if(y > -k*x+h){
+                            oLi[j].className="item sss3";
+                        }else{
+                            oLi[j].className="item sss4";
+                        }
+                    }
+                }
+            })(i);
+        }
+    </script>
+</body>
+</html>

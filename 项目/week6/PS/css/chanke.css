@@ -1,0 +1,514 @@
+body,ul,li,a,p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+a,p{
+    font-family: "Microsoft YaHei";
+}
+.clearfix::after,.clearfix::before{
+    content: '';
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: #121212 url(../img/1920_100\ nav.png) no-repeat;
+    background-position: center;
+    z-index: 100;
+    transition: all 1s;
+    line-height: 120px;
+}
+
+nav ul li:first-child{
+    float: left;
+    margin-left: 20%;
+}
+nav ul li:nth-child(2){
+    float: left;
+    margin-left: 8%;
+}
+nav ul li:nth-child(3){
+    float: right;
+    margin-right: 20%
+}
+nav ul li:nth-child(4){
+    float: right;
+    margin-right: 8%
+}
+nav ul li a{
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+main{
+    width: 100%;
+    font-size: 0;
+    font-family: "Microsoft YaHei";
+}
+main img{
+    width: 100%;
+}
+.study{
+    position: relative;
+    height: 180px;
+    background-color: #f2f2f2;
+}
+.study p{
+    display: inline;
+    font-size: 26px;
+    font-family: "Microsoft YaHei";
+    color: rgb(33, 33, 33);
+    line-height: 170px;
+    margin-left: 12%;
+}  
+.study .p2{
+    margin-left: 7%;
+    font-size: 20px;
+    font-family: "Myriad Pro";
+    color: rgb(172, 172, 172);
+}
+.item{
+    position: absolute;
+    top: 64%;
+    left: 35%;
+    background-color: rgb(172, 172, 172);
+    width: 30%;
+    height: 2px;
+}
+.btn{
+    position: absolute;
+    top: 30%;
+    left: 73%;
+    width: 209px;
+    height: 64px;
+}
+.part1{
+    background-color: #212121;
+    font-size: 12px;
+    height: 800px;
+    color: #ffffff;
+    overflow: hidden;
+}
+#btn1{
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    margin-top: 30%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    animation: moveL 1s linear infinite;
+    cursor: pointer;
+}
+#btn2{
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    margin-top: 30%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    animation: moveR 1s linear infinite;
+    cursor: pointer;
+}
+@keyframes moveL{
+    0%{
+        left: 40px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+@keyframes moveR{
+    0%{
+        right: 40px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid rgb(240, 236, 236); */
+}
+.title1{
+    float: left;
+    font-size: 15px;
+    font-family: "Microsoft YaHei";
+    color: rgb(255, 255, 255);
+    margin-top: 134px;
+    border-left: 1px solid #ffffff;
+    margin-bottom: 76px;
+}
+.title1 p,h2{
+    margin:0 0 0 14px;
+}
+.title1 p{
+    margin-top: 20px;
+}
+.title2{
+    font-size: 14px;
+    font-family: "Myriad Pro";
+    float: right;
+    margin-top: 130px;
+}
+.teacher{
+    clear: both;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.teacher li{
+    position: relative;
+    flex-shrink: 0;
+}
+.teacher li:hover div{
+    display: block;
+}
+.teacher div{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0 !important;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 3, 3,0.5);
+}
+.teacher div p{
+    line-height: 100px;
+    text-align: center;
+    font-size: 22px;
+}
+.teacher div p:nth-child(2){
+    line-height: 24px;
+}
+.teacher li{
+    width: 24%;
+    margin-left: 1%;
+}
+.teacher li img{
+    width: 100%;
+    height: 100%;
+}
+.teacher li:first-child{
+    margin-left: -25%;
+    transition: all 1s linear;
+}
+.part2{
+    background-color: #fff;
+    font-size: 12px;
+    height: 700px;
+    width: 100%;
+}
+.part2 ul{
+    margin-top: 184px;
+    display: flex;
+    height: 330px;
+    width: 100%;
+    /* border: 1px solid black; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: rgb(33, 33, 33);  
+}
+.part2 ul li{
+    position: relative;
+    /* border: 1px solid black; */
+    flex-basis:30%;
+    overflow: hidden;
+}
+.part2 ul div{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+.part2 ul li img{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.part2 ul li:first-child{
+    height: 65px;
+}
+.part2 ul li:first-child div{
+    border-left: 1px solid black;
+}
+.part2 ul li:first-child p{
+    padding-left: 14px;
+}
+.part2 ul li:first-child p:nth-of-type(1){
+    font-size: 30px;
+}
+.part2 ul li p:nth-of-type(1){
+    font-size: 14px;
+    line-height: 30px;
+}
+.part2 ul li p:nth-of-type(1) span{
+    color: #bfbebe;
+}
+.part2 ul li p:nth-of-type(2){
+    font-size: 14px;
+    line-height: 50px;
+}
+.part3{
+    height: 280px;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.people{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    color: #121212;
+}
+.people li{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+.part3 ul li div{
+    float: left;
+    margin: 124px 26px 0px 26px;
+    padding-right: 26px;
+    width: 50px;
+    height: 80px;
+    line-height: 80px;
+    border-right: 1px solid black;
+}
+.part3 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+}
+.part3 ul li p:nth-of-type(1){
+    font-size: 16px;
+    margin-top: 135px;
+}
+.part3 ul li p span{
+    color: #bfbebe;
+}
+.part3 ul li p:nth-of-type(2){
+    font-size: 14px;
+    margin-top: 9px;
+}
+.part4{
+    position: relative;
+    height: 1090px;
+    width: 100%;
+    color: #fff;
+    background: url(../img/jesse-gardner-40008.png) no-repeat;
+    background-position: center;
+}
+.part4 ul{
+    position: absolute;
+    top: 280px;
+    width: 80%;
+    height: 655px;
+    /* border: 1px solid wheat; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.part4 ul li{
+    box-sizing: border-box;
+    flex-basis: 33%;
+    height: 32.8%;
+    background-color: #141414;
+    padding: 46px 49px 0;
+}
+.p2{
+    font-size: 14px;
+    margin-top: 16px;
+}
+.p1{
+    font-size: 20px;
+}
+.part5{
+    height: 1040px;
+    width: 100%;
+    color: #121212;
+    background: url(../img/电脑.png) no-repeat;
+    background-position: 200% 50%;
+    transition: all 2s ease;
+}
+.box{
+    width: 60%;
+    height: 1040px;
+    /* border: 1px solid black; */
+    font-size: 14px;
+    line-height: 35px;
+}
+.box p:nth-child(1){
+    margin-top: 170px;
+    font-size: 30px;
+}
+.box p:nth-child(2){
+    margin-top: 15px;
+}
+.box p{
+    margin-top: 40px;
+}
+.box ul{
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.box ul li{
+    flex-basis: 5%;
+    text-align: center;
+    color: #bfbebe;
+}
+.box .box1{
+    color: #121212;
+    flex-basis: 29%;
+    border: 1px dashed grey;
+    border-radius: 10px;
+}
+.part6{
+    position: relative;
+    height: 717px;
+    width: 100%;
+    background-color: #f3f3f3;
+    color: #121212;
+}
+.part6 ul{
+    position: absolute;
+    top: 200px;
+    height: 450px;
+    width: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px
+}
+.part6 ul li{
+    position: relative;
+    /* box-sizing: border-box; */
+    flex-basis: 22%;
+    /* border: 1px solid black; */
+}
+.part6 ul li img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+}
+.p16{
+    font-size: 16px;
+    margin-top: 0;
+    line-height: 30px;
+}
+.p14{
+    margin-top: 15px;
+}
+.part6 ul li:first-child p:first-child{
+    font-size: 30px;
+}
+.part6 ul li:first-child span{
+    color: #bfbebe;
+}
+.part6 ul li:first-child p:nth-child(2){
+    margin-top: 20px;
+}
+.part7{
+    width: 100%;
+    height: 858px;
+    background-color: #fff;
+    background: url(../img/iphon.png) no-repeat;
+    background-position: 50% -20%;
+}
+footer{
+    position: relative;
+    height: 792px;
+    width: 100%;
+    background-color: #212121;
+    color: #fff;
+}
+footer .copyright{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 103px;
+    background-color: #171717;
+    font-size: 14px;
+    text-align: center;
+    line-height: 103px;
+}
+.contact1{
+    float: left;
+    margin-top: 50px;
+    width: 200px;
+    height: 260px;
+    /* border: 1px solid white; */
+    font-size: 14px;
+    margin-left: 40px;
+}
+.contact1.cancel{
+    clear: left;
+    margin-left: 0px;
+}
+.contact1 img{
+    width: 180px;
+    height: 180px;
+}
+.contact1 img:nth-child(2){
+    margin-left: 40px;
+}
+.contact1 p{
+    margin-top: 10px;
+}
+.contact2{
+    float: left;
+    margin-left: 80px;
+    /* border: 1px solid white; */
+    width: 200px;
+    height: 300px;
+    font-size: 14px;
+}
+.contact3 li{
+    float: right;
+    width: 250px;
+    height: 150px;
+    /* border: 1px solid white; */
+    font-size: 20px;
+}
+.contact3 li div{
+    float: left;
+    width: 80px;
+    height: 70px;
+    border-right: 1px solid white;
+}
+.contact3 li div img{
+    width: 65px;
+    height: 45px;
+    margin-top: 15px;
+}
+.contact3 li p{
+    margin-top: 10px;
+}

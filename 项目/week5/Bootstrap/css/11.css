@@ -1,0 +1,135 @@
+.container{
+    z-index: 1000;
+    position: relative;
+}
+body{
+    height: 10000px;
+}
+.masthead{
+    text-align: center;
+    color: white;
+    background:linear-gradient(45deg,#020031 0,#6d3353 100%);
+    padding: 60px 0 80px;
+}
+.masthead::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../imags/bs-docs-masthead-pattern.png);
+    background-position: center;
+    opacity: 0.5;
+}
+.masthead h1{
+    font-weight: 700;
+    font-size: 60px;
+}
+.masthead ul li{
+    list-style: none;
+}
+.masthead ul li a{
+    color: rgba(255, 255, 255, 0.5);
+}
+.bc-social{
+    margin-top: -30px;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+}
+.bc-social ul{
+    margin-bottom: 0;
+}
+.bc-social ul li{
+    list-style: none;
+}
+.bc-social a{
+    color: #555;
+}
+
+.social-buttons li {
+    display: inline-block;
+    line-height: 1px;
+    color: #555;
+}
+.social-buttons li:first-child:after{
+    content: "|";
+    padding: 0 10px;
+}
+.header-projects{
+    margin: 0 auto;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 70%;
+}
+.header-projects h1{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 42px;
+}
+.header-projects p{
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.addpa{
+    max-width: 310px;
+    margin: 0 auto;
+    /* padding: 0 15px; */
+}
+/* .addpa img{
+    width: 100%;
+} */
+.addcenter{
+    text-align: center;
+}
+.addcenter h3{
+    color: blue;
+}
+
+.footer{
+    color: #777;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+}
+.about{
+    /* margin-left: -15px; */
+}
+.about ul,.about li{
+    list-style: none;
+}
+
+.about>div{
+    height: 110px;
+    margin-bottom: 10px;
+}
+.about ul li a{
+    color: #777;
+}
+.about h4{
+    color: #563d7c;
+    font-size: 16px;
+}
+.footer-bottom a{
+    color: #777;
+}
+
+.footer-bottom ul li:first-child::after{
+    content: "|";
+    padding: 0 0 0 15px;
+}
+@media all and (min-width:768px){
+    .masthead{
+        padding: 90px 0 110px;
+    }
+    .masthead h1{
+        font-size: 90px;
+    }
+}

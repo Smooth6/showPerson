@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自适应</title>
+    <style>
+        body,ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .container{
+            display: flex;
+            /* width: 800px; */
+            height: 300px;
+            border: 1px solid black;
+            align-content:space-between;
+        }
+        .list1{
+            display: none;
+            display: flex;
+            flex-basis: 200px;
+            background-color: rgb(230, 129, 129);
+            flex-direction: column;
+            height: 300px;
+        }
+        .item1{
+            text-align: center;
+            line-height: 75px;
+            background: linear-gradient(to right,rgb(230, 129, 129),rgb(41, 202, 121) 50%,rgb(230, 129, 129));
+            border-bottom: 1px solid black;
+            box-sizing: border-box;
+            height: 75px;
+            /* border: 1px solid black; */
+        }
+        .item1:last-child{
+            border-bottom: none;
+        }
+        
+        .content{
+            flex-basis: 500px;
+            background-color: rgb(80, 163, 189);
+        }
+        .right{
+            flex-basis: 200px;
+            background-color: rgb(140, 47, 163);
+        }
+        .list2{
+            height: 60px;
+            /* width: 700px; */
+            display: none;
+            /* justify-content: flex-end; */
+        }
+        .item2{
+            flex-grow: 1;
+            flex-basis: 100px;
+            text-align: center;
+            line-height: 60px;
+            background: linear-gradient(to right,rgb(230, 129, 129),rgb(41, 202, 121) 50%,rgb(230, 129, 129));
+        }
+        @media all and (max-width:700px) and (min-width:200px){
+            .list1{
+                display: none;
+            }
+            .list2{
+                display: flex;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="list2">
+        <li class="item2">1</li>
+        <li class="item2">2</li>
+        <li class="item2">3</li>
+        <li class="item2">4</li>
+    </ul>
+    <div class="container">
+        <ul class="list1">
+            <li class="item1">1</li>
+            <li class="item1">2</li>
+            <li class="item1">3</li>
+            <li class="item1">4</li>
+        </ul>
+        <div class="content">
+            content
+        </div>
+        <div class="right">
+            right
+        </div>
+    </div>
+</body>
+</html>

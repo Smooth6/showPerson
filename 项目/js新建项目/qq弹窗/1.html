@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>qq弹窗</title>
+    <link rel="stylesheet" type="text/css" href="./iconfont.css">
+    <style>
+        html{
+            width: 99%;
+            height: 99%;
+        }
+        body{
+            width: 99%;
+            height: 98%;
+        }
+        .ad{
+            position: fixed;
+            bottom: -28%;
+            right: 0;
+            width: 350px;
+            height: 200px;
+            /* border: 1px solid black; */
+        }
+        .ad img{
+            width: 100%;
+            height: 100%;
+        }
+        .btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            /* border: 1px solid black; */
+        }
+    </style>
+</head>
+<body>
+    <iframe src="http://www.qq.com" frameborder="0" width="100%" height="100%"></iframe>
+    <div class="ad">
+        <a href="https://www.baidu.com" target="_blank"><img src="./img/111.jpg" alt=""></a>
+        <div class="btn"><i class="iconfont icon-cha"></i></div>
+    </div>
+    <script>
+        var bottom=-28;
+        var ad = document.getElementsByClassName('ad')[0],
+            img = ad.getElementsByTagName('img')[0];
+        var btn = document.getElementsByClassName('btn')[0];
+        
+        img.addEventListener('load',show)
+        btn.addEventListener('click',back);
+        function show(){
+            if(bottom < 0){
+                bottom +=1;
+                ad.style.bottom=bottom + '%';
+                setTimeout(show,30);
+            }else{
+                ad.style.bottom= 0 + '%';
+            }
+        }
+        function back(){
+            if(bottom > -28){
+                bottom -=1;
+                ad.style.bottom=bottom + '%';
+                setTimeout(back,30);
+            }else{
+                ad.style.bottom= -28 + '%';
+            }
+        }
+
+    </script>
+</body>
+</html>

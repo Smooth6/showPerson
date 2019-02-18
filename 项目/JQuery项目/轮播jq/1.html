@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/1.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="png">
+            <img src="./img/5.jpg" alt="">
+            <img src="./img/1.webp" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.webp" alt="">
+            <img src="./img/5.jpg" alt="">
+            <img src="./img/1.webp" alt="">
+        </div>
+        <div class="btn1 items"><</div>
+        <div class="btn2 items">></div>
+        <ul class="list">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script>
+    var index=0,timer,index2=0;
+    // hover效果
+    $('.wrapper').mouseenter(function(){
+        clearInterval(timer);
+        $('.items').show();
+    }).mouseleave(function(){
+        timer=setInterval(()=>{
+            $('.btn2').trigger('click');
+        },2000);
+        $('.items').hide();
+    });
+
+    // 下一图
+    $('.btn2').click(function(){
+        index++;
+        if(index>4){
+            index=0;
+        }
+        liChange(index);
+        $('.png').stop(false,true).animate({
+            left:'-=520px'
+        },function(){
+            index2++;
+            if(index2>4){
+                $('.png').css('left','-520px');
+                index2=0;
+            }
+        });
+    });
+
+    // 上一图
+    $('.btn1').click(function(){
+        index--;
+        if(index<0){
+            index=4;
+        }
+        liChange(index);
+        $('.png').stop(false,true).animate({
+            left:'+=520px'
+        },function(){
+            index2--;
+            if(index2<0){
+                $('.png').css('left','-2600px');
+                index2=4;
+            }
+        })
+    });
+    // 改变圆点
+    function liChange(s){
+        // console.log(index);
+        $('.active').removeClass();
+        $('.list li').each(function(index,arr){
+            if(index==s){
+                $(this).addClass('active');
+            }
+        });
+    }
+    // 点击改变
+    var li=document.getElementsByTagName('li');
+    for(let i=0;i<li.length;i++){
+        li[i].onclick=function(){
+            liChange(i);
+            // console.log(index,i);
+            $('.png').animate({
+                left: -i*520-520+'px'
+            },function(){
+                index=i;
+            })
+        }
+    }
+    // 自动播放
+    timer=setInterval(()=>{
+        $('.btn2').trigger('click');
+    },2000);
+</script>
+</html>

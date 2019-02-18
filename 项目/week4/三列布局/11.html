@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <style>
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        .nav{
+            min-width: 800px;
+            height: 50px;
+            background-color: rgb(165, 164, 164);
+        }
+        .nav-list{
+            float: right;
+            height: 50px;
+            display: flex;
+            width: 500px;
+            justify-content: flex-end;
+        }
+        .nav-item{
+            height: 50px;
+            flex-grow: 1;
+            background: linear-gradient(to right,rgb(66, 60, 60) ,white 50%,rgb(66, 60, 60));
+            text-align: center;
+            line-height: 50px;
+        }
+        .wrapper{
+            display: flex;
+            width: 100%;
+            min-width: 800px;
+            border: 1px solid black;
+            justify-content: space-between;
+        }
+        .wrapper div:first-child{
+            flex-basis: 600px;
+            height: 500px;
+            background-color: pink;
+        }
+        .wrapper div:nth-child(2){
+            flex-basis: 800px;
+            margin: 0 50px;
+            background-color: rgb(65, 75, 206);
+        }
+        .wrapper div:last-child{
+            flex-basis: 800px;
+            height: 500px;
+            background-color: rgb(36, 13, 240);
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width:100%;
+            min-width: 800px;
+            background-color: rgb(124, 117, 117);
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <ul class="nav-list">
+            <li class="nav-item">首页</li>
+            <li class="nav-item">课程</li>
+            <li class="nav-item">老师</li>
+            <li class="nav-item">关于我们</li>
+        </ul>
+    </header>
+    <div class="wrapper">
+        <div class="item">我是left</div>
+        <div class="item">我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我</div>
+        <div class="item">我是right</div>
+    </div>
+    <footer>
+        <p>今天冻的我手脚冰凉</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <link rel="stylesheet" href="css/3.css">
+
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <script>
+    var myCanvas=document.getElementById('myCanvas'),timer1,drawa;
+    var ctx=myCanvas.getContext('2d'),i=0;
+    var x,y;
+
+    
+
+    function init(){
+        var img=new Image();
+        var random=Math.random();
+            if(random>0.3){
+                img.src="./imags/1.png";
+            }else{
+                img.src='./imags/2.png';
+            }
+        img.onload=function(){
+            myCanvas.style.backgroundImage='url('+img.src+')';
+
+            // myCanvas.addEventListener('mousedown',downFun);
+            
+            ctx.fillStyle='#aaa'; 
+            ctx.fillRect(0,0,400,400);
+            ctx.globalCompositeOperation='destination-out';
+            
+            document.body.onmousedown=function(e){
+                ctx.beginPath();
+                x=e.clientX-myCanvas.offsetLeft;
+                y=e.clientY-myCanvas.offsetTop;
+                ctx.arc(x,y,20,0,Math.PI*2);
+                ctx.fill();
+                document.body.onmousemove=function(e){
+                    var x1=e.clientX-myCanvas.offsetLeft,
+                        y1=e.clientY-myCanvas.offsetTop;
+                    // ctx.beginPath();
+                    // ctx.arc(x1,y1,20,0,Math.PI*2);
+                    // ctx.closePath();
+                    // ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.moveTo(x,y);
+                    ctx.lineTo(x1,y1);
+                    ctx.lineWidth=40;
+                    ctx.lineCap='round';
+                    ctx.stroke();
+                    x=x1;
+                    y=y1;
+                }
+                document.body.onmouseup=function(){
+                // document.body.onmousedown=null;
+                document.body.onmousemove=null;
+                document.body.onmouseup=null;
+                clearOver()
+                }
+            }
+            // document.body.onmouseup=function(){
+            //     document.body.onmousedown=null;
+            //     document.body.onmousemove=null;
+            //     document.body.onmouseup=null;
+            // }
+
+
+        }
+        
+    }
+    init();
+    function clearOver(){
+        var check=ctx.getImageData(0,0,400,400);
+        var sum=0;
+        for(var i=3;i<check.data.length;i+=4){
+            if(check.data[i]==0){
+                sum++;
+            }
+        }
+        if(sum>400*400*0.6){
+            ctx.clearRect(0,0,400,400);
+        }
+    }
+
+
+    // function downFun(){
+    //     myCanvas.addEventListener('mousemove',moveFun);
+    //     document.body.addEventListener('mouseup',upFun);
+    // }
+    // function moveFun(e){
+    //     ctx.beginPath();
+    //     var i=e.clientX-myCanvas.offsetLeft,
+    //         j=e.clientY-myCanvas.offsetTop;
+    //     ctx.arc(i,j,20,0,Math.PI*2);
+    //     ctx.fill();
+    // }
+    // function upFun(){
+    //     myCanvas.removeEventListener('mousemove',moveFun);
+    //     // myCanvas.removeEventListener('mousedown',downFun);
+    //     document.body.removeEventListener('mouseup',upFun);
+
+    // }
+
+
+    </script>
+</body>
+</html>

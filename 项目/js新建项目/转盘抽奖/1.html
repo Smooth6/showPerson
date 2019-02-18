@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>转盘抽奖</title>
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        li {
+            width: 17%;
+            height: 17%;
+            background-color: rgb(114, 104, 104);
+            text-align: center;
+            line-height: 60px;
+            font-size: 40px
+        }
+
+        .start,
+        .active {
+            background-color: #ff6700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>16</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>6</li>
+        <li>15</li>
+        <li></li>
+        <li class="start">开始</li>
+        <li></li>
+        <li>7</li>
+        <li>14</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>8</li>
+        <li>13</li>
+        <li>12</li>
+        <li>11</li>
+        <li>10</li>
+        <li>9</li>
+    </ul>
+    <script>
+        var start = document.getElementsByClassName('start')[0],
+            oLi = document.getElementsByTagName('li');
+        var arr = [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6];
+        arr1 = arr.map((element) => element - 1);
+        var s = 1, i, j = 0,active,flag=true;
+
+        start.addEventListener('click', ()=>{
+            if(flag){
+                start1();
+            }
+        });
+        
+
+        function change() {
+            active = document.getElementsByClassName('active')[0];
+            active.className = '';
+            if (j < 15) {
+                j += 1
+            } else {
+                j = 0;
+            }
+            console.log(j);
+            i = arr1[j];
+
+            oLi[i].className = 'active';
+            if (s < 5) {
+                setTimeout(change, 100 * s);
+                s += 1;
+            }
+            if (s < 70) {
+                setTimeout(change, 3 * s);
+                s += 1;
+            }else{
+                flag=!flag;
+            }
+        }
+
+        function start1() {
+            flag=!flag;
+            s = 1;
+            if(active = document.getElementsByClassName('active')[0]){
+                active.className = '';
+            }
+            j = parseInt(Math.random() * 16);
+            oLi[arr[j]].className = 'active';
+            change();
+        }
+    </script>
+</body>
+
+</html>

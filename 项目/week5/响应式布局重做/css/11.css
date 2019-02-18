@@ -1,0 +1,108 @@
+body,ul,li,a,p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+a,p{
+    color: aliceblue;
+}
+body{
+    background-color: #555;
+}
+.nav{
+    height: 44px;
+    background-color: #333;
+}
+.nav-list{
+    max-width: 980px;
+    margin: 0 auto;
+}
+.list,.nav-add{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-logo a{
+    background-image: url('../imags/favicon.ico');
+    width: 55px;
+    height: 44px;
+    background-size: 55px;
+    background-position: center;
+}
+
+.list li a,.nav-add li a{
+    /* height: 44px; */
+    display: inline-block;
+    line-height: 44px;
+    margin: 0 30px;
+}
+.nav-add li a{
+    font-size: 40px;
+}
+.nav-add{
+    display: none;
+}
+
+.nav-list .list-active{
+    display: flex;
+}
+
+main p{
+    border-top: 1px solid gray;
+    margin-top: 130px;
+    padding-top: 20px;
+    /* max-width: 200px; */
+    width: 40%;
+    height: 50px;
+    display: inline-block;
+}
+
+main div{
+    max-width: 700px;
+    margin: 0 auto;
+}
+main p:nth-child(2n+1){
+    float: left;
+}
+
+main p:nth-child(2n){
+    float: right;
+}
+@media all and (max-width: 600px){
+    .list{
+        display: none;
+        position: absolute;
+        top: 44px;
+        width: 100%;
+        flex-wrap: wrap;
+        background-color: rgb(46, 45, 45);
+    }
+    .list .list-logo{
+        display: none;
+    }
+    .list li:first-child{
+        border-top: none;
+    }
+    .list li{
+        margin: 0 auto;
+        flex-basis: 80%;
+        border-top: 1px solid darkgray;
+        text-align: center;
+    }
+    .list li a{
+        font-size: 20px;
+    }
+    .nav-add{
+        display: flex;
+        background-color: #333;
+    }
+    main{
+        margin: 0 30px;
+    }
+    main p{
+        /* font-size: 20px; */
+        margin-top: 50px;
+        width: 100%;
+    }
+}

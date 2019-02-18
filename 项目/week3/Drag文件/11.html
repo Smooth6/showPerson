@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传文件</title>
+    <script defer src="./js/11.js"></script>
+    <script src="./js/dragFile.js"></script>
+    <style>
+        .box{
+            float: left;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            background-color: #ff6700;
+            border-radius: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .progress{
+            position: relative;
+            margin-top: 10px;
+            float: left;
+            clear: left;
+            height: 50px;
+            width: 300px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgb(247, 230, 241);
+            border-radius: 25px;
+            border: 1px solid rgb(80, 59, 59);
+            overflow: hidden;
+        }
+        span{
+            position: absolute;
+            left: 130px;
+            color: #000;
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .current{
+            position: relative;
+            clear: both;
+            float: left;
+            width: 0px;
+            height: 50px;
+            background-color: rgba(231, 33, 165, 0.534);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">拖拽文件到此处</div>
+    <div class="progress">
+        <span class="percentage">0%</span>
+        <div class="current">
+
+        </div>
+        
+    </div>
+    
+</body>
+</html>

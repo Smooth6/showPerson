@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 750px;
+            height: 550px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="wrapper" id="myCanvas" width="750" height="550"></canvas>
+    <script src="./tools.js"></script>
+    <script>
+        var myCanvas = document.getElementById('myCanvas');
+        var ctx = myCanvas.getContext('2d');
+        var mouse = tools.getMouse(myCanvas);
+        var arr = [[[140, 170], [333, 170], [529, 170]], [[117, 267], [335, 267], [532, 260]], [[112, 355], [335, 363], [554, 363]]];
+        var hammer1 = new Image();
+        var bg = new Image();
+        var hammer2 = new Image();
+        var mouse1 = new Image();
+        var mouse2 = new Image();
+
+        var x, y, hammer = hammer1, x1 = 0, y1 = 0,flag1=true,score = 0,arr1=[3,3],arr2=[3,3],arr3=[3,3];
+
+        bg.src = './img/bg.png';
+        hammer1.src = './img/hammer1.png';
+        hammer2.src = './img/hammer2.png';
+        mouse1.src = './img/mouse1.png';
+        mouse2.src = './img/mouse2.png';
+
+        bg.onload = function () {
+            ctx.beginPath();
+            ctx.drawImage(bg, 0, 0, 750, 550);
+            ctx.drawImage(mouse1, arr[0][0][0], arr[0][0][1], 100, 100);
+
+            var gradient = ctx.createLinearGradient(0, 0, 750, 0);
+            gradient.addColorStop("0.3", "red");
+            gradient.addColorStop("0.5", "yellow");
+            gradient.addColorStop("1.0", "red");
+            // 用渐变填色
+            ctx.fillStyle = gradient;
+            ctx.font = "30px Verdana";
+            ctx.fillText("请按Enter开始游戏", 250, 300);
+            ctx.fillText("鼠标点击捶打老属", 250, 350);
+        }
+
+        document.onkeydown = function (e) {
+            if (e.keyCode == 13) {
+                if(flag1){
+                    startChange();
+                    flag1=!flag1;
+                }
+            }
+        }
+
+        function startChange() {
+            ctx.clearRect(0, 0, 750, 550);
+            ctx.beginPath();
+            ctx.drawImage(bg, 0, 0, 750, 550);
+            arr1 = mouseUp1();
+            arr2 = mouseUp2({x1:undefined,y1:undefined,arr4:arr1});
+                   mouseUp3({x1:undefined,y1:undefined,arr4:arr1,arr5:arr2});
+            scoreChange();
+            hammerChange();
+            requestAnimationFrame(startChange);
+        }
+
+        function hammerChange() {
+            ctx.drawImage(hammer, x - 50, y - 38, 98, 77);
+        }
+
+        myCanvas.addEventListener('mousemove', function () {
+            x = mouse.x;
+            y = mouse.y;
+        });
+
+        myCanvas.addEventListener('mousedown', function () {
+            x1 = mouse.x;
+            y1 = mouse.y;
+            mouseUp1({ x1, y1 });
+            mouseUp2({ x1, y1 });
+            mouseUp3({ x1, y1 });
+            hammer = hammer2;
+            setTimeout(() => {
+                hammer = hammer1;
+            }, 150);
+        });
+        
+        var mouseUp3 = mouseUp();
+        var mouseUp2 = mouseUp();
+        var mouseUp1 = mouseUp();
+        function mouseUp() {
+            var y = 100;
+            var i = parseInt(Math.random() * 3),
+                j = parseInt(Math.random() * 3);
+                var mouses = mouse1;
+                var flag =true;
+                setInterval(()=>{
+                    mouses = mouse1;
+                    flag =true;
+                    y = 100;
+                    i = parseInt(Math.random() * 3);
+                    j = parseInt(Math.random() * 3);
+                },2500);
+            return function ({ x1 = 0, y1 = 0,arr4=[3,3],arr5=[3,3]} = {}) {
+                for(var s=0;;s++){
+                    if((arr4[0]==i&&arr4[1]==j)||(arr5[0]==i&&arr5[1]==j)){
+                        console.log(1);
+                        i = parseInt(Math.random() * 3);
+                        j = parseInt(Math.random() * 3);
+                        continue;
+                    }
+                    break;
+                }
+                if (y > 0&&x1==0) {
+                    y -= 2;
+                }
+                if (arr[i][j][0] < x1 && x1 < arr[i][j][0] + 100 && arr[i][j][1] < y1 && y1 < arr[i][j][1] + 100 - y) {
+                    mouses = mouse2;
+                    if(flag){
+                        score++;
+                        flag=false;
+                    }
+                }
+                ctx.drawImage(mouses, 0, 0, 100, 100 - y, arr[i][j][0], arr[i][j][1] + y, 100, 100 - y);
+                return [i,j];
+            }
+        };
+
+        function scoreChange(){
+            ctx.fillStyle = 'red';
+            ctx.font = "30px Verdana";
+            ctx.fillText(Number(score), 275, 216);
+        }
+
+    </script>
+</body>
+
+</html>

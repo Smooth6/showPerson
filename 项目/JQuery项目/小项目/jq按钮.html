@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 30px;
+        margin: 50px auto;
+    }
+    button,input{
+        float: left;
+        width: 33%;
+        height: 100%;
+        border: 1px solid black;
+        box-sizing: border-box;
+        text-align: center;
+        outline: none;
+    }
+    .sss{
+        background-color: rgb(121, 119, 119);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="prve sss">+</button>
+        <input type="text" value="1">
+        <button class="next">-</button>
+    </div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        var num = 1,max=20;
+
+        // $("div").find('.prve').click(function(){
+        //     chang(-1);
+        //     $('.next').removeClass('sss');
+        // }).end().find('.next').click(()=>{
+        //     chang(1);
+        //     $('.prve').removeClass('sss');
+        // });
+        $('input').on('input',()=>{
+            chang(0);
+        });
+
+        function chang(s){
+            num = $('input').val()*1 + s;
+            if(num<=1||isNaN(num)){
+                num = 1;
+                $('.next').removeClass('sss');
+                $('.prve').addClass('sss');
+            }else if(num >=max){
+                num =max;
+                $('.prve').removeClass('sss');
+                $('.next').addClass('sss');
+            }
+            $('input').val(num);
+        }
+        
+        $('.prve').add('.next').click(function(){
+            if($(this).hasClass('prve')){
+                chang(-1);
+                $('.next').removeClass('sss');
+            }else{
+                chang(1);
+                $('.prve').removeClass('sss');
+            }
+        })
+    </script>
+</body>
+</html>

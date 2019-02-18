@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* svg{
+            border: 1px solid black;
+        } */
+        body{
+            background-color: #333;
+        }
+        .wrapper{
+            width: 350px;
+            margin: 0 auto;
+        }
+        .item{
+            display: inline-block;
+        }
+        svg{
+            width: 40px;
+            height: 40px;
+            margin: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item item1">
+            <svg width="500" height="500" xmlns=“http://www.w3.org/2000/svg” version="1.1">
+                <rect x="0"y="0" width="6" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="0"to="1"begin="0"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="7"y="0" width="6" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="0"to="1"begin="0.2s"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="14"y="0" width="6" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="0"to="1"begin="0.4s"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+            </svg>
+        </div>
+
+        <div class="item item2">
+            <svg width="500" height="500" xmlns=“http://www.w3.org/2000/svg” version="1.1">
+                <rect x="0"y="0" width="6" height="20" fill="#ff6700">
+                        <animate attributeName="height" values="20;10;20" begin="0"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="7"y="0" width="6" height="20" fill="#ff6700">
+                        <animate attributeName="height" values="20;10;20"begin="0.2s"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="14"y="0" width="6" height="20" fill="#ff6700">
+                        <animate attributeName="height" values="20;10;20"begin="0.4s"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+            </svg>
+        </div>
+
+        <div class="item item3">
+                <svg width="500" height="500" xmlns=“http://www.w3.org/2000/svg” version="1.1">
+                    <rect x="0"y="0" width="6" height="20" fill="#ff6700">
+                            <animate attributeName="y" values="0;10;0" begin="0"dur="0.6s"repeatCount="indefinite"></animate>
+                    </rect>
+                    <rect x="7"y="0" width="6" height="20" fill="#ff6700">
+                            <animate attributeName="y" values="0;10;0"begin="0.2s"dur="0.6s"repeatCount="indefinite"></animate>
+                    </rect>
+                    <rect x="14"y="0" width="6" height="20" fill="#ff6700">
+                            <animate attributeName="y" values="0;10;0"begin="0.4s"dur="0.6s"repeatCount="indefinite"></animate>
+                    </rect>
+                </svg>
+        </div>
+
+        <div class="item item4">
+            <svg width="500" height="500" xmlns=“http://www.w3.org/2000/svg” version="1.1">
+                <rect x="0"y="0" width="6" height="20" fill="#ff6700">
+                        <animate attributeName="y" values="-10;10;-10" begin="0"dur="0.6s"repeatCount="indefinite"></animate>
+                        <animate attributeName="height" values="40;10;40" begin="0"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="7"y="0" width="6" height="20" fill="#ff6700">
+                    <animate attributeName="y" values="-10;10;-10" begin="0.2"dur="0.6s"repeatCount="indefinite"></animate>
+                    <animate attributeName="height" values="40;10;40" begin="0.2"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+                <rect x="14"y="0" width="6" height="20" fill="#ff6700">
+                <animate attributeName="y" values="-10;10;-10" begin="0.4"dur="0.6s"repeatCount="indefinite"></animate>
+                <animate attributeName="height" values="40;10;40" begin="0.4"dur="0.6s"repeatCount="indefinite"></animate>
+                </rect>
+            </svg>
+    </div>
+    </div>
+    
+
+    <script>
+
+    </script>
+</body>
+</html>
+
+<!-- <path d="m73.5,185.5c-1,-3 -2,-10 -2,-18c0,-11 0.9371,-19.82414 5,-27c4.18069,-7.3839 15.7339,-12.27711 32,-15c22.76997,-3.81161 44,-2 63,-2c12,0 24.98283,6.01434 30,12c5.17905,6.17879 7.89682,12.6113 11,21c2.86099,7.73399 4.42534,17.01509 4,23c-0.50127,7.05328 -1.77031,14.06779 -8,20c-12.05287,11.47729 -27,12 -33,12c-3,0 -4.18875,0.58472 -5,0c-2.56537,-1.84901 -4,-8 -4,-13c0,-10 -0.65002,-23.24002 6,-34c8.92195,-14.43602 24.69336,-18.53151 41,-21c17.82468,-2.69829 34.31308,-3.39807 51,0c14.56711,2.9664 21.59732,7.35065 26,12c5.91479,6.24622 8.64554,14.80998 11,24c2.77475,10.83055 3.54855,21.76984 -3,33c-5.74347,9.8495 -12.63342,16.97336 -22,22c-10.04648,5.39151 -25.47198,7.18762 -36,4c-3.45085,-1.04483 -7.19069,-10.20166 -5,-22c2.54272,-13.69432 17.76375,-35.61508 41,-45c38.46597,-15.53607 86.78955,-22.0717 130,-30c18.91956,-3.47139 25.99927,-3.58226 28,1c4.47379,10.24623 4.99594,22.86484 6,34c1.43689,15.93535 -0.46637,30.66655 -5,39c-3.05997,5.62465 -6.90778,7.49623 -11,8c-0.99249,0.12218 -5,0 -7,0c-1,0 -1,-1 -2,-4l-1,-1" id="svg_1" stroke-width="1.5" stroke="#000" fill="none"/> -->
