@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <input v-model="name">
+        <h1>{{name}}</h1>
+        <button v-on:click="clickMe">click me!</button>
+    </div>
+    <script src="./SelfVue.js"></script>
+    <script>
+        new SelfVue({
+            el: '#app',
+            data: {
+                title: 'hello world',
+                name: 'PanDongFang'
+            },
+            methods: {
+                clickMe: function () {
+                    if(this.title == 'hello world'){
+                        this.title = '点击按钮，变成Hello wrold';
+                    }else{
+                        this.title = 'hello world';
+                    }
+                }                
+            },
+            mounted: function () {
+                window.setTimeout(() => {
+                    this.title = '点击按钮，变成Hello wrold';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+
+</html>
